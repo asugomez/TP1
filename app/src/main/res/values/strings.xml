@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Main Activity</string>
+    <string name="hello">Hello</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="btnOK">OK</string>
+
+</resources>
