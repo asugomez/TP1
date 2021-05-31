@@ -33,4 +33,10 @@
         app:layout_constraintStart_toEndOf="@+id/newItem"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="651dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
 </android.support.constraint.ConstraintLayout>

@@ -10,21 +10,23 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.ec.tp1.adapter.AdapterList
 import com.ec.tp1.adapter.Item
+import com.ec.tp1.adapter.ItemAdapter
 
 class ChoixListActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_choix_list)
+        //setContentView(R.layout.activity_choix_list)
+        setContentView(R.xml.text_row_item)
         val pseudo: String? = intent.getStringExtra("pseudo")
         this.title="$pseudo lists"
 
         val recyclerView = findViewById<RecyclerView>(R.id.list)
-        val lists: MutableList<Item> = mutableListOf()
+        val items: MutableList<Item> = mutableListOf()
 
-        recyclerView.adapter = AdapterList
-        recyclerview.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+
+        recyclerView.adapter = ItemAdapter(items)
+        recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
 
 
@@ -32,6 +34,11 @@ class ChoixListActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when(v?.id){
+            R.id.btnNewList->{
+                //ajouter une nouvelle list
+                val nameNewList: String = findViewById<EditText>(R.id.newlist).text.toString()
+                //r
+            }
         }
     }
 
