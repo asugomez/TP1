@@ -14,22 +14,21 @@ class ShowListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_list)
-        var list_name: String? = intent.getStringExtra("list")
+        val list_name: String? = intent.getStringExtra("list")
         this.title = "Items of $list_name"
 
         val recyclerView = findViewById<RecyclerView>(R.id.list)
         val items: MutableList<Item> = mutableListOf()
 
-        repeat(3){
+        repeat(3) {
             items.add(Item("item  ${it + 1}"))
         }
-
 
 
         val adapter = ItemAdapter(items)
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL,false)
+        recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
 
         val refBtnNewList: Button = findViewById(R.id.btnNewList)
@@ -39,6 +38,5 @@ class ShowListActivity : AppCompatActivity() {
             adapter.addData(newItemName) // add new item
             refEdtTxtNewList.setText("") // clear the input area
         }
-    }
     }
 }
