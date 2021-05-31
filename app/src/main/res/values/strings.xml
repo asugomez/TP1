@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Main Activity</string>
+    <string name="app_name">TP1</string>
     <string name="hello">Hello</string>
     <string name="pseudo">Pseudo</string>
     <string name="btnOK">OK</string>
@@ -13,5 +13,9 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="choixlistactivity">ChoixListActivity</string>
+    <string name="ok">OK</string>
+    <string name="nouvelle_liste">Nouvelle liste</string>
+    <string name="nom">nom</string>
+    <string name="preferences">Preferences</string>
 
 </resources>
