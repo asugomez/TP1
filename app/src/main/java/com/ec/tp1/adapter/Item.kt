@@ -1,5 +1,3 @@
 package com.ec.tp1.adapter
 
-data class Item {
-    val itemTextStr: String
-}
+data class Item (var listTextStr : String)
