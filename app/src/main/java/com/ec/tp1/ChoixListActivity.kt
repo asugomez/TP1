@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.widget.Toast
 import com.ec.tp1.adapter.Item
 import com.ec.tp1.adapter.ItemAdapter
@@ -15,10 +16,11 @@ class ChoixListActivity : AppCompatActivity(){
         setContentView(R.layout.activity_choix_list)
         val bundle2: Bundle? = intent.extras
         if(bundle2 != null){
-            val pseudo: String? = bundle2.getString("pseudo")
-            val t: Toast = Toast.makeText(this,pseudo, Toast.LENGTH_SHORT)
+            val pseudo: Bundle? = intent.getBundleExtra("pseudo")
+            val t: Toast = Toast.makeText(this,pseudo?.getString("pseudo"), Toast.LENGTH_SHORT)
             t.show()
         }
+        Log.i("hola", "abc")
 
         /*val recyclerView = findViewById<RecyclerView>(R.id.recycler)
         val items: MutableList<Item> = mutableListOf()

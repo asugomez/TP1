@@ -60,9 +60,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, MenuItem.OnMenuI
         when(v?.id){
             R.id.btnOK -> {
                 val s: String = findViewById<EditText>(R.id.inputNom).text.toString().trim() //recuperer un champ texte
-                val t: Toast = Toast.makeText(this,s + " ajouté", Toast.LENGTH_SHORT)
+                //val t: Toast = Toast.makeText(this,s + " ajouté", Toast.LENGTH_SHORT)
                 //lastPseudo = s
-                t.show()
+                //t.show()
                 // nouvelle activité
                 val bundle: Bundle = Bundle()
                 bundle.putString("pseudo",s)
