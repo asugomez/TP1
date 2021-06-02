@@ -1,26 +1,50 @@
 package com.ec.tp1
 
-import android.content.Intent
+
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import com.ec.tp1.adapter.Item
 import com.ec.tp1.adapter.ItemAdapter
 
-class ChoixListActivity : AppCompatActivity(), View.OnClickListener {
+class ChoixListActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_choix_list)
         setContentView(R.layout.activity_choix_list)
+        val bundle2: Bundle? = intent.extras
+        if(bundle2 != null){
+            val pseudo: String? = bundle2.getString("pseudo")
+            val t: Toast = Toast.makeText(this,pseudo, Toast.LENGTH_SHORT)
+            t.show()
+        }
+
+        /*val recyclerView = findViewById<RecyclerView>(R.id.recycler)
+        val items: MutableList<Item> = mutableListOf()
+        val pseudo: String? = intent.getStringExtra("pseudo")
+        val t: Toast = Toast.makeText(this,pseudo, Toast.LENGTH_SHORT)
+        t.show()
+
+        repeat(3){
+            val item = Item("item $it")
+            items.add(item)
+        }
+
+        recyclerView.adapter = ItemAdapter(items)
+        recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+
+         */
+    }
+
+
+}
+
+/*
+
         val pseudo: String? = intent.getStringExtra("pseudo")
         this.title="$pseudo item"
 
-        val recyclerView = findViewById<RecyclerView>(R.id.list)
         val items: MutableList<Item> = mutableListOf()
 
         repeat(3){
@@ -37,7 +61,9 @@ class ChoixListActivity : AppCompatActivity(), View.OnClickListener {
             adapter.addData(nameNewList)
             refEdtTxtNewList.setText("")
         }
+        //  Permet de faire la liaison (Bind) entre la vue RecyclerView et une liste de données.
         recyclerView.adapter = adapter
+        // Permet de positionner correctement l'ensemble des données de la liste.
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
         val toShowListActivity = Intent(this, ShowListActivity::class.java).apply {
@@ -60,8 +86,4 @@ class ChoixListActivity : AppCompatActivity(), View.OnClickListener {
         when(v?.id){
 
         }
-    }
-
-
-}
-
+ */

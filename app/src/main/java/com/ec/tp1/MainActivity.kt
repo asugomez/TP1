@@ -59,17 +59,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, MenuItem.OnMenuI
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.btnOK -> {
-                val s: String = findViewById<EditText>(R.id.inputNom).text.toString()//recuperer un champ texte
+                val s: String = findViewById<EditText>(R.id.inputNom).text.toString().trim() //recuperer un champ texte
                 val t: Toast = Toast.makeText(this,s + " ajouté", Toast.LENGTH_SHORT)
                 //lastPseudo = s
                 t.show()
                 // nouvelle activité
-                val b: Bundle = Bundle()
-                b.putString("pseudo",s)
+                val bundle: Bundle = Bundle()
+                bundle.putString("pseudo",s)
 
-                val toChoixListActivity: Intent = Intent(this, ChoixListActivity::class.java)
-                toChoixListActivity.putExtra("pseudo", b)
-                startActivity(toChoixListActivity)
+                val intentChoixListActivity: Intent = Intent(this, ChoixListActivity::class.java)
+                intentChoixListActivity.putExtra("pseudo", bundle)
+                startActivity(intentChoixListActivity)
 
             }
             R.id.inputNom -> {

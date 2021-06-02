@@ -10,8 +10,8 @@ import com.ec.tp1.R
 
 class ItemAdapter(val items: MutableList<Item>) :
     RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
-    val checkStatus: HashMap<Int, Boolean> = HashMap() // store the check status for all checkboxes
-    private var mOnItemClickListener: AdapterView.OnItemClickListener? = null
+    // items is the data
+
     /**
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
@@ -37,25 +37,12 @@ class ItemAdapter(val items: MutableList<Item>) :
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        // Get element from your dataset at this position and replace the
+        // Get element from your items at this position and replace the
         // contents of the view with that element
         viewHolder.textView.text = items[position].toString()
     }
 
-    fun addData(text: String){
-        // add data in the list to display
-        items.add(Item(text))
-        checkStatus.put(items.size, false)
-        notifyItemChanged(itemCount)
-    }
-
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        mOnItemClickListener = listener
-    }
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
-    }
-
-    // Return the size of your dataset (invoked by the layout manager)
+    // Return the size of your items (invoked by the layout manager)
     override fun getItemCount() = items.size
+
 }

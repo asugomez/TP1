@@ -14,6 +14,7 @@ class ShowListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_list)
+        /*
         val list_name: String? = intent.getStringExtra("list")
         this.title = "Items of $list_name"
 
@@ -37,6 +38,6 @@ class ShowListActivity : AppCompatActivity() {
             val newItemName = refEdtTxtNewList.text.toString()
             adapter.addData(newItemName) // add new item
             refEdtTxtNewList.setText("") // clear the input area
-        }
+        }*/
     }
 }
